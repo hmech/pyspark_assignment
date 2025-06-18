@@ -1,0 +1,189 @@
+Taxi Data Schema:
+root
+ |-- vendor_id: integer (nullable = true)
+ |-- tpep_pickup_datetime: timestamp (nullable = true)
+ |-- tpep_dropoff_datetime: timestamp (nullable = true)
+ |-- passenger_count: integer (nullable = true)
+ |-- trip_distance: double (nullable = true)
+ |-- pickup_longitude: double (nullable = true)
+ |-- pickup_latitude: double (nullable = true)
+ |-- rate_code_id: integer (nullable = true)
+ |-- store_and_forward: string (nullable = true)
+ |-- dropoff_longitude: double (nullable = true)
+ |-- dropoff_latitude: double (nullable = true)
+ |-- payment_type: integer (nullable = true)
+ |-- fare_amount: double (nullable = true)
+ |-- extra: double (nullable = true)
+ |-- mta_tax: double (nullable = true)
+ |-- tip_amount: double (nullable = true)
+ |-- tolls_amount: double (nullable = true)
+ |-- improvement_surcharge: double (nullable = true)
+ |-- total_amount: double (nullable = true)
+ |-- pickup_h3_index: string (nullable = true)
+ |-- dropoff_h3_index: string (nullable = true)
+ |-- taxi_id: integer (nullable = true)
+
+Zones Data Schema:
+root
+ |-- h3_index: string (nullable = true)
+ |-- zone: string (nullable = true)
+ |-- borough: string (nullable = true)
+ |-- location_id: string (nullable = true)
+
+RTBF Data Schema:
+root
+ |-- taxi_id: string (nullable = true)
+
+
+Starting Task 4:
+Taxi Data Schema:
+root
+ |-- vendor_id: integer (nullable = true)
+ |-- tpep_pickup_datetime: timestamp (nullable = true)
+ |-- tpep_dropoff_datetime: timestamp (nullable = true)
+ |-- passenger_count: integer (nullable = true)
+ |-- trip_distance: double (nullable = true)
+ |-- pickup_longitude: double (nullable = true)
+ |-- pickup_latitude: double (nullable = true)
+ |-- rate_code_id: integer (nullable = true)
+ |-- store_and_forward: string (nullable = true)
+ |-- dropoff_longitude: double (nullable = true)
+ |-- dropoff_latitude: double (nullable = true)
+ |-- payment_type: integer (nullable = true)
+ |-- fare_amount: double (nullable = true)
+ |-- extra: double (nullable = true)
+ |-- mta_tax: double (nullable = true)
+ |-- tip_amount: double (nullable = true)
+ |-- tolls_amount: double (nullable = true)
+ |-- improvement_surcharge: double (nullable = true)
+ |-- total_amount: double (nullable = true)
+ |-- pickup_h3_index: string (nullable = true)
+ |-- dropoff_h3_index: string (nullable = true)
+ |-- taxi_id: integer (nullable = true)
+
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+
+|vendor_id|tpep_pickup_datetime|tpep_dropoff_datetime|passenger_count|trip_distance|  pickup_longitude|   pickup_latitude|rate_code_id|store_and_forward| dropoff_longitude| dropoff_latitude|payment_type|fare_amount|extra|mta_tax|tip_amount|tolls_amount|improvement_surcharge|total_amount|pickup_h3_index|dropoff_h3_index|taxi_id|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+
+|        2| 2015-02-12 17:34:27|  2015-02-12 17:50:15|              2|         1.29| -73.9767074584961|40.739295959472656|           1|                N|  -73.988525390625|40.74862289428711|           1|       10.5|  1.0|    0.5|      3.08|         0.0|                  0.3|       15.38|8b2a100d2a01fff| 8b2a100d2c76fff|  11128|
+|        2| 2015-02-12 17:34:28|  2015-02-12 17:36:36|              1|         0.62|-73.98593139648438|40.777828216552734|           1|                N|-73.97777557373047|40.77701187133789|           2|        4.0|  1.0|    0.5|       0.0|         0.0|                  0.3|         5.8|8b2a1008b15bfff| 8b2a1008ba04fff|   1931|
+|        2| 2015-02-12 17:34:29|  2015-02-12 17:45:15|              1|         1.08|-73.95955657958984| 40.77413558959961|           1|                N|-73.97103881835938|40.76588821411133|           1|        8.0|  1.0|    0.5|      1.96|         0.0|                  0.3|       11.76|8b2a1008939cfff| 8b2a100d689efff|   4651|
+|        2| 2015-02-12 17:34:29|  2015-02-12 17:38:38|              2|         0.68|-73.99498748779297| 40.72317886352539|           1|                N|-73.98991394042969|40.72947311401367|           2|        5.0|  1.0|    0.5|       0.0|         0.0|                  0.3|         6.8|8b2a1072cb93fff| 8b2a1072c973fff|   1187|
+|        2| 2015-02-12 17:34:29|  2015-02-12 17:52:40|              4|         1.22| -73.9887466430664| 40.73678970336914|           1|                N|-73.99107360839844|40.74924850463867|           1|       11.5|  1.0|    0.5|      3.32|         0.0|                  0.3|       16.62|8b2a100d2391fff| 8b2a100d2c1cfff|   4850|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+
+only showing top 5 rows
+Showing min and max dates:
++-------------------+-------------------+
+|           min date|           max date|
++-------------------+-------------------+
+|2015-01-15 00:00:00|2016-02-02 16:30:52|
++-------------------+-------------------+
+
+
+Starting Task 5:
+Taxi ID count before filtering: 13587
+Taxi ID count after filtering: 13477
+Number of rows removed: 110
+
+Starting Task 7:
+Geocoded Taxi Data Schema:
+root
+ |-- vendor_id: integer (nullable = true)
+ |-- tpep_pickup_datetime: timestamp (nullable = true)
+ |-- tpep_dropoff_datetime: timestamp (nullable = true)
+ |-- passenger_count: integer (nullable = true)
+ |-- trip_distance: double (nullable = true)
+ |-- pickup_longitude: double (nullable = true)
+ |-- pickup_latitude: double (nullable = true)
+ |-- rate_code_id: integer (nullable = true)
+ |-- store_and_forward: string (nullable = true)
+ |-- dropoff_longitude: double (nullable = true)
+ |-- dropoff_latitude: double (nullable = true)
+ |-- payment_type: integer (nullable = true)
+ |-- fare_amount: double (nullable = true)
+ |-- extra: double (nullable = true)
+ |-- mta_tax: double (nullable = true)
+ |-- tip_amount: double (nullable = true)
+ |-- tolls_amount: double (nullable = true)
+ |-- improvement_surcharge: double (nullable = true)
+ |-- total_amount: double (nullable = true)
+ |-- pickup_h3_index: string (nullable = true)
+ |-- dropoff_h3_index: string (nullable = true)
+ |-- taxi_id: integer (nullable = true)
+ |-- pickup_zone: string (nullable = true)
+ |-- pickup_borough: string (nullable = true)
+
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+
+|vendor_id|tpep_pickup_datetime|tpep_dropoff_datetime|passenger_count|trip_distance|  pickup_longitude|   pickup_latitude|rate_code_id|store_and_forward| dropoff_longitude| dropoff_latitude|payment_type|fare_amount|extra|mta_tax|tip_amount|tolls_amount|improvement_surcharge|total_amount|pickup_h3_index|dropoff_h3_index|taxi_id|         pickup_zone|pickup_borough|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+
+|        2| 2015-02-12 17:34:29|  2015-02-12 17:45:15|              1|         1.08|-73.95955657958984| 40.77413558959961|           1|                N|-73.97103881835938|40.76588821411133|           1|        8.0|  1.0|    0.5|      1.96|         0.0|                  0.3|       11.76|8b2a1008939cfff| 8b2a100d689efff|   4651|Upper East Side N...|     Manhattan|
+|        2| 2015-02-08 11:33:46|  2015-02-08 11:37:45|              1|         0.56|-73.94990539550781|40.717437744140625|           1|                N|-73.95001220703125| 40.7240104675293|           1|        4.5|  0.0|    0.5|      1.06|         0.0|                  0.3|        6.36|8b2a100d1656fff| 8b2a100d1441fff|   5281|Williamsburg (Nor...|      Brooklyn|
+|        2| 2015-01-05 06:42:56|  2015-01-05 06:47:01|              3|         1.01|-73.98418426513672| 40.74333572387695|           1|                N|-73.99615478515625|40.73707580566406|           1|        5.5|  0.0|    0.5|       1.0|         0.0|                  0.3|         7.3|8b2a100d2172fff| 8b2a100d2631fff|  13020|            Union Sq|     Manhattan|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+-----------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+
+only showing top 3 rows
+
+Starting Task 8:
+Geocoded Taxi Data Schema with Dropoff:
+root
+ |-- vendor_id: integer (nullable = true)
+ |-- tpep_pickup_datetime: timestamp (nullable = true)
+ |-- tpep_dropoff_datetime: timestamp (nullable = true)
+ |-- passenger_count: integer (nullable = true)
+ |-- trip_distance: double (nullable = true)
+ |-- pickup_longitude: double (nullable = true)
+ |-- pickup_latitude: double (nullable = true)
+ |-- rate_code_id: integer (nullable = true)
+ |-- store_and_forward: string (nullable = true)
+ |-- dropoff_longitude: double (nullable = true)
+ |-- dropoff_latitude: double (nullable = true)
+ |-- payment_type: integer (nullable = true)
+ |-- fare_amount: double (nullable = true)
+ |-- extra: double (nullable = true)
+ |-- mta_tax: double (nullable = true)
+ |-- tip_amount: double (nullable = true)
+ |-- tolls_amount: double (nullable = true)
+ |-- improvement_surcharge: double (nullable = true)
+ |-- total_amount: double (nullable = true)
+ |-- pickup_h3_index: string (nullable = true)
+ |-- dropoff_h3_index: string (nullable = true)
+ |-- taxi_id: integer (nullable = true)
+ |-- pickup_zone: string (nullable = true)
+ |-- pickup_borough: string (nullable = true)
+ |-- dropoff_zone: string (nullable = true)
+ |-- dropoff_borough: string (nullable = true)
+
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+------------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+-----------------+---------------+
+|vendor_id|tpep_pickup_datetime|tpep_dropoff_datetime|passenger_count|trip_distance|  pickup_longitude|   pickup_latitude|rate_code_id|store_and_forward| dropoff_longitude|  dropoff_latitude|payment_type|fare_amount|extra|mta_tax|tip_amount|tolls_amount|improvement_surcharge|total_amount|pickup_h3_index|dropoff_h3_index|taxi_id|         pickup_zone|pickup_borough|     dropoff_zone|dropoff_borough|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+------------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+-----------------+---------------+
+|        2| 2015-01-30 19:22:57|  2015-01-30 19:37:37|              1|          2.1|-73.97298431396484|40.795597076416016|           1|                N|-73.95336151123047| 40.77873229980469|           1|       11.0|  1.0|    0.5|       1.2|         0.0|                  0.3|        14.0|8b2a10088046fff| 8b2a10089ab6fff|   8629|Upper West Side N...|     Manhattan|   Yorkville West|      Manhattan|
+|        1| 2015-01-16 04:18:49|  2015-01-16 04:36:07|              3|         10.4| -73.9839859008789| 40.72140121459961|           1|                N|     -73.861328125|    40.76806640625|           1|       30.0|  0.5|    0.5|       5.0|         0.0|                  0.3|        36.3|8b2a100d3790fff| 8b2a100e250dfff|    236|     Lower East Side|     Manhattan|LaGuardia Airport|         Queens|
+|        1| 2015-02-12 09:36:31|  2015-02-12 09:40:30|              1|          0.6|-73.95159149169922|40.773738861083984|           1|                N|-73.95026397705078|40.778812408447266|           1|        4.5|  0.0|    0.5|       1.0|         0.0|                  0.3|         6.3|8b2a10089ad8fff| 8b2a10089b88fff|   4400|      Yorkville East|     Manhattan|   Yorkville West|      Manhattan|
++---------+--------------------+---------------------+---------------+-------------+------------------+------------------+------------+-----------------+------------------+------------------+------------+-----------+-----+-------+----------+------------+---------------------+------------+---------------+----------------+-------+--------------------+--------------+-----------------+---------------+
+only showing top 3 rows
+
+Starting Task 9:
+ny_taxi_insight1 CSV created
+
+Starting Task 10:
+ny_taxi_insight1_filtered CSV created
+
+Starting Task 11:
+Count before filtering: 24995775
+Count after filtering: 24381411
+Number of rows removed: 614364
+
+Starting Task 12:
+ny_taxi_insight2 CSV created
+
+Starting Task 13:
+ny_taxi_insight3 CSV created
+
+Starting Task 14:
+ny_taxi_insight4 CSV created
+
+Starting Task 14:
+Traceback (most recent call last):
+  File "/Users/hmechalchuk/Documents/repos/scratch/pyspark/spark_assignment.py", line 202, in <module>
+    ).orderby("borough")
+      ^^^^^^^
+  File "/Users/hmechalchuk/Documents/repos/scratch/pyspark/venv/lib/python3.11/site-packages/pyspark/python/lib/pyspark.zip/pyspark/sql/classic/dataframe.py", line 971, in __getattr__
+pyspark.errors.exceptions.base.PySparkAttributeError: [ATTRIBUTE_NOT_SUPPORTED] Attribute `orderby` is not supported.
